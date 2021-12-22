@@ -5,7 +5,7 @@ node {
   stage('SonarQube Analysis') {
    withAnt(installation: 'Ant') {
 // some block
-   sh "ant build"
+   sh "ant sonar -Dsonar.login=47efbd52d4848bc2a0d8f44f164ac1509be2d0a0"
    
     }
   }
