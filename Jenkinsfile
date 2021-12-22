@@ -3,7 +3,7 @@ node {
     checkout scm
   }
   stage('SonarQube Analysis') {
-   withAnt(installation: 'LocalAnt') {
+   withAnt(installation: 'Ant') {
 // some block
    sh "ant build"
    
