@@ -6,7 +6,7 @@ node {
    withAnt(installation: 'LocalAnt') {
 // some block
    sh "ant build"
-   }
+   
     }
   }
 }
