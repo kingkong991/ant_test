@@ -12,14 +12,7 @@ node {
 }
 
 
-  stage("Quality Gate") {
-               withSonarQubeEnv('Sonarqube Server') {
-                script {
-                    sh {
-                    "-Dsonar.projectKey=Javabuild2 " +
-                    "-Dsonar.projectName=Javabuild2 "
-                         }
-                }
+  stage("Quality Gate") {               
     timeout(time: 1, unit: 'HOURS') { 
      def qg = waitForQualityGate() 
       if (qg.status != 'OK') {
