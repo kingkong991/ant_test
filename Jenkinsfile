@@ -15,7 +15,7 @@ node {
   stage("Quality Gate") {
                withSonarQubeEnv('Sonarqube Server') {
                 script {
-                    sh 
+                    sh {
                     "-Dsonar.projectKey=Javabuild2 " +
                     "-Dsonar.projectName=Javabuild2 "
                          }
