@@ -21,7 +21,7 @@ node {
                     "-Dsonar.projectKey=Javabuild2 " +
                     "-Dsonar.projectName=Javabuild2 " +
                     "-Dsonar.projectVersion=0.0.0 " +
-                    "-Dsonar.sources=**/src " +
+                    "-Dsonar.sources=**/src "
                         }
             }
     timeout(time: 1, unit: 'HOURS') { 
