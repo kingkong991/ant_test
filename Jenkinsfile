@@ -10,7 +10,20 @@ node {
     }
   }
 }
+
+
   stage("Quality Gate") {
+    steps {
+            withSonarQubeEnv('Sonarqube Server') {
+                script {
+                    def sonarScanner = tool name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    sh "${sonarScanner}/bin/sonar-scanner " +
+                    "-Dsonar.projectKey=Javabuild2 " +
+                    "-Dsonar.projectName=Javabuild2 " +
+                    "-Dsonar.projectVersion=0.0.0 " +
+                    "-Dsonar.sources=**/src " +
+                        }
+            }
     timeout(time: 1, unit: 'HOURS') { 
      def qg = waitForQualityGate() 
       if (qg.status != 'OK') {
