@@ -15,8 +15,8 @@ node {
   stage("Quality Gate") {
                withSonarQubeEnv('Sonarqube Server') {
                 script {
-                    def sonarScanner = tool name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    sh "${sonarScanner}/bin/sonar-scanner " +
+                    def sonarScanner = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                    sh 
                     "-Dsonar.projectKey=Javabuild2 " +
                     "-Dsonar.projectName=Javabuild2 "
                          }
